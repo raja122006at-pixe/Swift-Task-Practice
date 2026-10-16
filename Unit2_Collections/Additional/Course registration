@@ -1,0 +1,37 @@
+
+var subjects = ["Swift", "UIKit", "SwiftUI"]
+
+subjects.append("Networking")
+subjects.insert("Testing", at: 1)
+
+if let index = subjects.firstIndex(of: "UIKit") {
+    subjects.remove(at: index)
+}
+
+print("Sorted subjects:", subjects.sorted())
+
+var registered: Set<String> = []
+registered.insert("Anu")
+registered.insert("Ben")
+registered.insert("Anu")
+
+print("Unique students:", registered.count)
+
+var marks: [String: Int] = [
+    "Anu": 85,
+    "Ben": 75,
+    "Chitra": 92
+]
+
+marks["Dev"] = 80
+marks["Ben"] = 90
+
+print("Missing student:", marks["Esha"] as Any)
+
+for name in marks.keys.sorted() {
+    print("\(name): \(marks[name]!)")
+}
+
+if let topper = marks.max(by: { $0.value < $1.value }) {
+    print("Highest:", topper.key, topper.value)
+}

@@ -1,0 +1,44 @@
+enum Grade: String {
+    case A, B, C, F
+}
+
+struct Student {
+    var name: String
+    var marks: Int
+
+    var grade: Grade {
+        switch marks {
+        case 90...100: return .A
+        case 75..<90: return .B
+        case 40..<75: return .C
+        default: return .F
+        }
+    }
+}
+
+class School {
+    var students: [Student] = []
+
+    func addStudent(_ student: Student) {
+        students.append(student)
+    }
+
+    func printReport() {
+        let sortedStudents = students.sorted {
+            $0.marks > $1.marks
+        }
+
+        for student in sortedStudents {
+            print("\(student.name): \(student.marks), Grade \(student.grade.rawValue)")
+        }
+    }
+}
+
+let school = School()
+
+school.addStudent(Student(name: "Anu", marks: 95))
+school.addStudent(Student(name: "Ben", marks: 68))
+school.addStudent(Student(name: "Chitra", marks: 82))
+school.addStudent(Student(name: "Dev", marks: 35))
+
+school.printReport()

@@ -1,0 +1,36 @@
+
+import Foundation
+
+// Step 1: Calculate subtotal
+let itemPrice = 450.0
+let quantity = 3
+let subtotal = itemPrice * Double(quantity)
+
+print("Subtotal: Rs.", subtotal)
+
+// Step 2: Apply coupon discount
+let hasCoupon = true
+let discount = (hasCoupon && subtotal > 1000)
+    ? subtotal * 0.10 : 0.0
+
+print("Discount: Rs.", discount)
+
+// Step 3: Calculate GST and total
+let discountedAmount = subtotal - discount
+let gst = discountedAmount * 0.18
+let total = discountedAmount + gst
+
+print("GST: Rs.", gst)
+print("Total bill: Rs.", total)
+
+// Step 4: Split bill between 4 people
+let share = total / 4
+print("Each person's share: Rs.", share)
+
+// Step 5: Use division and remainder
+let amount = 1234
+let hundreds = amount / 100
+let remainder = amount % 100
+
+print("Hundreds: ", hundreds)
+print("Remainder: ", remainder)

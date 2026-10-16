@@ -1,0 +1,12 @@
+
+let marks: [String: Int] = [
+    "Anu": 85,
+    "Ben": 75,
+    "Chitra": 92,
+    "Dev": 68,
+    "Esha": 88
+]
+
+for (name, mark) in marks {
+    print("\(name): \(mark)")
+}

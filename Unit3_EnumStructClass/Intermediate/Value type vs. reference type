@@ -1,0 +1,27 @@
+struct Score {
+    var value: Int
+}
+
+class Player {
+    var value: Int
+
+    init(value: Int) {
+        self.value = value
+    }
+}
+
+// Struct copy
+var originalScore = Score(value: 10)
+var copiedScore = originalScore
+copiedScore.value = 20
+
+print("Original struct:", originalScore.value)
+print("Copied struct:", copiedScore.value)
+
+// Class reference
+let originalPlayer = Player(value: 10)
+let copiedPlayer = originalPlayer
+copiedPlayer.value = 20
+
+print("Original class:", originalPlayer.value)
+print("Copied class:", copiedPlayer.value)

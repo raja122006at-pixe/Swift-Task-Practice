@@ -1,0 +1,19 @@
+
+let marks = [
+    "Anu": 85,
+    "Ben": 75,
+    "Chitra": 92,
+    "Dev": 68,
+    "Esha": 88
+]
+
+let sortedStudents = marks.sorted {
+    if $0.value == $1.value {
+        return $0.key < $1.key
+    }
+    return $0.value > $1.value
+}
+
+for student in sortedStudents.prefix(3) {
+    print("\(student.key): \(student.value)")
+}
